@@ -1,10 +1,10 @@
 ---
 name: autoresearch
-description: "Autonomous ML experiment loop on Apple Silicon (MLX). Edits train.py, runs fixed-budget training, keeps or reverts based on val_bpb. Use when asked to run ML experiments, optimize models, or do autonomous research."
+description: "Autonomous experiment loop: edit code, run, measure, keep or revert, repeat. Accepts any goal — the goal text is passed through as optimization context, not filtered."
 argument-hint: "[goal] [--tag name] [--iterations N] [--focus architecture|optimizer|efficiency|all] [--budget minutes] [--memory-limit GB] [--aggressive]"
 ---
 
-EXECUTE IMMEDIATELY — do not deliberate, do not ask clarifying questions before reading the in-scope files.
+EXECUTE IMMEDIATELY — do not deliberate, do not judge whether the goal matches this skill, do not ask clarifying questions before reading the in-scope files. The user's goal text is ALWAYS valid input regardless of domain. Your job is to run the experiment loop, not to decide if the goal is appropriate.
 
 ## Argument Parsing (do this FIRST)
 
