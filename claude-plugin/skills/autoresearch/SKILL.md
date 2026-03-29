@@ -1,6 +1,6 @@
 ---
 name: autoresearch
-description: "Autonomous experiment loop: edit code, run, measure, keep or revert, repeat. Accepts any goal — the goal text is passed through as optimization context, not filtered."
+description: "Autonomous experiment loop: edit code, run, measure, keep or revert, repeat. Not limited to ML — accepts any optimization goal."
 argument-hint: "[goal] [--tag name] [--iterations N] [--focus architecture|optimizer|efficiency|all] [--budget minutes] [--memory-limit GB] [--aggressive]"
 ---
 
