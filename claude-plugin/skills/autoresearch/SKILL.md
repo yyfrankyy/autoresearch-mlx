@@ -1,6 +1,7 @@
 ---
 name: autoresearch
 description: "Autonomous ML experiment loop on Apple Silicon (MLX). Edits train.py, runs fixed-budget training, keeps or reverts based on val_bpb. Use when asked to run ML experiments, optimize models, or do autonomous research."
+argument-hint: "[goal] [--tag name] [--iterations N] [--focus architecture|optimizer|efficiency|all] [--budget minutes] [--memory-limit GB] [--aggressive]"
 ---
 
 EXECUTE IMMEDIATELY — do not deliberate, do not ask clarifying questions before reading the in-scope files.

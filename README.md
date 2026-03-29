@@ -22,7 +22,67 @@ uv run prepare.py
 uv run train.py
 ```
 
-Then point Claude Code or another coding agent at `program.md` and let it run the loop.
+Then use the Claude Code plugin to run the autonomous loop (see below).
+
+## Claude Code Plugin Usage
+
+Install this plugin in Claude Code, then use the `/autoresearch` slash command:
+
+```
+/autoresearch [goal] [options]
+```
+
+### Examples
+
+```bash
+# Run with all defaults (tag=today's date, focus=all, budget=5min, unlimited iterations)
+/autoresearch
+
+# Set a specific optimization goal
+/autoresearch beat 1.3 val_bpb
+
+# Run exactly 3 iterations focusing on architecture
+/autoresearch --iterations 3 --focus architecture
+
+# Aggressive architectural search with memory limit
+/autoresearch --focus architecture --aggressive --memory-limit 24
+
+# Tune optimizer hyperparameters with a custom branch tag
+/autoresearch --tag lr-sweep --focus optimizer --iterations 5
+
+# Full example with all options
+/autoresearch beat 1.25 val_bpb --tag march-run --iterations 10 --focus all --budget 5 --memory-limit 32
+```
+
+### Options
+
+| Option | Default | Description |
+|---|---|---|
+| `goal` | *(none)* | Free-text optimization target, e.g. `beat 1.3 val_bpb` |
+| `--tag <name>` | today's date | Git branch name: `autoresearch/<tag>` |
+| `--iterations <N>` | unlimited | Stop after N experiments |
+| `--focus <area>` | `all` | One of: `architecture`, `optimizer`, `efficiency`, `all` |
+| `--budget <minutes>` | `5` | Training time budget per experiment |
+| `--memory-limit <GB>` | no limit | Peak VRAM limit in GB |
+| `--aggressive` | off | Allow large architectural changes |
+
+### What happens
+
+1. Creates a git branch `autoresearch/<tag>`
+2. Establishes a baseline by running `train.py` on your hardware
+3. Enters an autonomous loop: edit → train → evaluate → keep/revert
+4. Logs every experiment to `results.tsv`
+5. Keeps going until iteration limit or you interrupt (Ctrl+C)
+
+### Prerequisites
+
+Before first run, prepare the data:
+
+```bash
+cd autoresearch-mlx
+uv sync
+uv run prepare.py   # downloads data shards + tokenizer to ~/.cache/autoresearch/
+```
 
 ## What matters
 
