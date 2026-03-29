@@ -9,7 +9,11 @@
       "name": "autoresearch-mlx",
       "description": "Autonomous ML experiment loops for Apple Silicon using MLX. Implements Karpathy's autoresearch protocol: edit train.py, run fixed-budget training, keep/revert based on val_bpb, repeat.",
       "category": "development",
-      "source": "."
+      "source": {
+        "source": "url",
+        "url": "https://github.com/yyfrankyy/autoresearch-mlx.git",
+        "sha": "e8e7ad5ccabf265a97ac4780c5228c198d605488"
+      }
     }
   ]
 }
