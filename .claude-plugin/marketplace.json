@@ -3,7 +3,7 @@
   "description": "Autonomous ML experiment loops for Apple Silicon using MLX",
   "version": "0.1.0",
   "owner": {
-    "name": "yyfrankyy"
+    "name": "yyfrankyy",
     "url": "https://github.com/yyfrankyy"
   },
   "plugins": [
@@ -12,10 +12,10 @@
       "description": "Autonomous ML experiment loops for Apple Silicon using MLX. Implements Karpathy's autoresearch protocol: edit train.py, run fixed-budget training, keep/revert based on val_bpb, repeat.",
       "version": "1.0.0",
       "author": {
-	  "name": "yyfrankyy"
+	  "name": "yyfrankyy",
 	  "url": "https://github.com/yyfrankyy"
       },
-      "source": ".",
+      "source": "./claude-plugin",
       "category": "productivity"
     }
   ]
