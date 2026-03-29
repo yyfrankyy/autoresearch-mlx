@@ -1,0 +1,9 @@
+{
+  "name": "autoresearch-mlx",
+  "description": "Autonomous ML experiment loops for Apple Silicon using MLX. Implements Karpathy's autoresearch protocol: edit train.py, run fixed-budget training, keep/revert based on val_bpb, repeat.",
+  "version": "1.0.0",
+  "author": {
+    "name": "ayangxu"
+  },
+  "license": "MIT"
+}
